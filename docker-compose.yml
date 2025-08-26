@@ -1,0 +1,9 @@
+services:
+  proxy:
+    image: openresty/openresty:alpine 
+    volumes:
+      - "$PWD/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro"
+    ports:
+      - "1819:1819"
+      - "443:443"
+    restart: unless-stopped
